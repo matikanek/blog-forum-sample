@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-right-column',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./right-column.component.scss']
 })
 export class RightColumnComponent implements OnInit {
+  faArrowLeft = faArrowLeft;
+  faArrowRight = faArrowRight;
 
   constructor() { }
 

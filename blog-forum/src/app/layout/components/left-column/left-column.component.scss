@@ -1,0 +1,31 @@
+:host {
+  width: 33%;
+  height: 100%;
+  background-color: #5522e8;
+}
+
+.left-column {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 35px;
+  font-family: "Oswald", sans-serif;
+}
+
+.left-column__latest {
+  text-transform: uppercase;
+  font-size: 80px;
+  font-weight: 700;
+}
+
+.left-column__website-name {
+  display: flex;
+  font-size: 64px;
+  text-transform: uppercase;
+  font-weight: 700;
+
+  p:last-child {
+    font-weight: 200;
+  }
+}

@@ -1,0 +1,47 @@
+:host {
+  width: 20%;
+  height: 100%;
+  background-color: #5522e8;
+}
+
+.right-column {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 35px;
+}
+
+.right-column__company {
+  font-family: "Inter", sans-serif;
+  font-size: 40px;
+  font-weight: 900;
+}
+
+.right-column__page-counter {
+  font-family: "Oswald", sans-serif;
+  display: flex;
+  align-items: baseline;
+}
+
+.right-column__page-counter-arrow {
+  font-size: 32px;
+}
+
+.right-column__page-counter-side-number {
+  padding: 0px 20px;
+  display: flex;
+  align-items: baseline;
+}
+
+.right-column__page-counter-side-number-current {
+  font-size: 64px;
+  color: #c8ff46;
+  font-weight: 600;
+}
+
+.right-column__page-counter-side-number-all {
+  font-size: 32px;
+  font-weight: 300;
+}
