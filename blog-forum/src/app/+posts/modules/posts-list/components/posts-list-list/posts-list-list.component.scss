@@ -1,0 +1,39 @@
+:host {
+  height: 100%;
+}
+
+.posts-list-list {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  background-color: rgba(113, 34, 232);
+}
+
+.posts-list-list__wrapper {
+  width: 112%;
+  position: relative;
+  left: -6%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 10px 0px;
+}
+
+.posts-list-list__post {
+  width: 50%;
+}
+
+.posts-list-list__post-content {
+  cursor: pointer;
+  margin: 30px 15px;
+  padding: 20px;
+  height: 520px;
+  background-color: #abcdef;
+  box-shadow: 0px 36px 48px rgba(13, 4, 35, 0.5);
+  border-radius: 8px;
+  transition: 1s;
+
+  &:hover {
+    height: 550px;
+  }
+}
