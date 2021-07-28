@@ -7,6 +7,8 @@
   height: 100%;
   margin: 0 auto;
   background-color: rgba(113, 34, 232);
+  border-left: 1px solid rgba(250, 250, 250, 0.25);
+  border-right: 1px solid rgba(250, 250, 250, 0.25);
 }
 
 .posts-list-list__wrapper {
@@ -24,16 +26,80 @@
 }
 
 .posts-list-list__post-content {
-  cursor: pointer;
+  color: #041c26;
   margin: 30px 15px;
-  padding: 20px;
-  height: 520px;
-  background-color: #abcdef;
+  min-height: 550px;
+  background-color: #fff;
   box-shadow: 0px 36px 48px rgba(13, 4, 35, 0.5);
   border-radius: 8px;
   transition: 0.7s;
+  display: flex;
+  flex-direction: column;
 
   &:hover {
-    height: 550px;
+    min-height: 600px;
   }
+}
+
+.posts-list-list__post-content-topic {
+  width: 96px;
+  min-height: 96px;
+  border-radius: 50%;
+  margin: 20px;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(91.62deg, #c8ff46 31.18%, #97ff46 100%);
+}
+
+.posts-list-list__post-content-title {
+  font-size: 40px;
+  font-family: "Oswald", sans-serif;
+  font-weight: 300;
+  line-height: 48px;
+  padding: 20px 15px 40px 35px;
+}
+
+.posts-list-list__post-content-body {
+  font-size: 20px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  padding: 0px 15px 0px 35px;
+  max-height: 100px;
+}
+
+.posts-list-list__post-content-preview {
+  background: linear-gradient(91.62deg, #c8ff46 31.18%, #97ff46 100%);
+  border-radius: 0px 0px 8px 8px;
+  margin-top: auto;
+  padding: 20px 25px 20px 35px;
+  font-size: 24px;
+  font-family: "Inter", sans-serif;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.posts-list-list__post-content-preview::before {
+  position: absolute;
+  bottom: 69px;
+  height: 100px;
+  width: 100%;
+  left: 0;
+  content: "";
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 1) 40%,
+    rgba(255, 255, 255, 0) 90%
+  );
+  display: flex;
+  align-items: flex-end;
+  pointer-events: none; /* so the text is still selectable */
+}
+
+.posts-list-list__post-content-link {
+  text-decoration: underline;
+  font-weight: 700;
 }

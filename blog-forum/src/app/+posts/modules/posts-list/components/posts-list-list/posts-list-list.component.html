@@ -3,7 +3,38 @@
     <div class="posts-list-list__wrapper">
       <div class="posts-list-list__post" *ngFor="let post of posts">
         <div class="posts-list-list__post-content">
-          
+          <div class="posts-list-list__post-content-topic">
+            <fa-icon 
+              *ngIf="post.id % 5 === 1"
+              [icon]="faCode"
+            ></fa-icon>
+            <fa-icon 
+              *ngIf="post.id % 5 === 2"
+              [icon]="faLocationArrow"
+            ></fa-icon>
+            <fa-icon 
+              *ngIf="post.id % 5 === 3"
+              [icon]="faMapMarkerAlt"
+            ></fa-icon>
+            <fa-icon 
+              *ngIf="post.id % 5 === 4"
+              [icon]="faHeart"
+            ></fa-icon>
+            <fa-icon 
+              *ngIf="post.id % 5 === 0"
+              [icon]="faDollarSign"
+            ></fa-icon>
+          </div>
+          <div class="posts-list-list__post-content-title">
+            {{ post.title }}
+          </div>
+          <div class="posts-list-list__post-content-body">
+            {{ post.body }}
+          </div>
+          <div class="posts-list-list__post-content-preview">
+            <p class="posts-list-list__post-content-link">Zobacz</p>
+            <fa-icon [icon]="faArrowUp"></fa-icon>
+          </div>
         </div>
       </div>
     </div>
