@@ -31,8 +31,35 @@ export class PostsListComponent implements OnInit {
       id: 4,
       title: "eum et est occaecati",
       body: "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit"
+    },
+    {
+      userId: 1,
+      id: 5,
+      title: "eum et est occaecati",
+      body: "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit"
+    },
+    {
+      userId: 1,
+      id: 6,
+      title: "eum et est occaecati",
+      body: "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit"
+    },
+    {
+      userId: 1,
+      id: 7,
+      title: "eum et est occaecati",
+      body: "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit"
+    },
+    {
+      userId: 1,
+      id: 8,
+      title: "eum et est occaecati",
+      body: "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit"
     }
   ];
+  dividedPosts = new Array(this.posts.length/4).fill(0).map((el, index) => {
+    return [...this.posts].splice(index*4, 4);
+  });
 
   constructor() { }
 

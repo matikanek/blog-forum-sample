@@ -1,7 +1,7 @@
 <div class="post-list-list__container">
   <div class="posts-list-list">
     <div class="posts-list-list__wrapper">
-      <div class="posts-list-list__post" *ngFor="let post of posts">
+      <div class="posts-list-list__post" *ngFor="let post of dividedPosts[currentIndex]">
         <div class="posts-list-list__post-content">
           <div class="posts-list-list__post-content-topic">
             <fa-icon 
@@ -38,5 +38,27 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
+<div class="post-list-list__page-counter">
+  <div 
+    class="post-list-list__page-counter-arrow" 
+    [ngClass]="{'post-list-list__page-counter-arrow--disabled': currentIndex === 0}"
+  >
+    <fa-icon [icon]="faArrowLeft" (click)="prev()"></fa-icon>
+  </div>
+  <div class="post-list-list__page-counter-side-number">
+    <div class="post-list-list__page-counter-side-number-current">
+      {{ currentIndex + 1 >= 10? '': 0 }}{{ currentIndex + 1 }}&nbsp;
+    </div>
+    <div class="post-list-list__page-counter-side-number-all">
+      / {{ dividedPosts.length >= 10? '': 0 }}{{ dividedPosts.length }}
+    </div>
+  </div>
+  <div 
+    class="post-list-list__page-counter-arrow"
+    [ngClass]="{'post-list-list__page-counter-arrow--disabled': currentIndex === dividedPosts.length-1}"
+  >
+    <fa-icon [icon]="faArrowRight" (click)="next()"></fa-icon>
   </div>
 </div>
