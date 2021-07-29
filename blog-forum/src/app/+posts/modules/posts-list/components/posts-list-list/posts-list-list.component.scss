@@ -29,6 +29,7 @@
   color: #041c26;
   margin: 30px 15px;
   min-height: 550px;
+  max-height: 550px;
   background-color: #fff;
   box-shadow: 0px 36px 48px rgba(13, 4, 35, 0.5);
   border-radius: 8px;
@@ -59,6 +60,16 @@
   font-weight: 300;
   line-height: 48px;
   padding: 20px 15px 40px 35px;
+  max-height: 200px;
+  overflow: hidden;
+  background-image: linear-gradient(
+    to bottom,
+    #041c26 160px,
+    transparent 182px
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .posts-list-list__post-content-body {
@@ -66,7 +77,8 @@
   font-family: "Inter", sans-serif;
   font-weight: 400;
   padding: 0px 15px 0px 35px;
-  max-height: 100px;
+  flex-grow: 1;
+  overflow: hidden;
 }
 
 .posts-list-list__post-content-preview {
