@@ -2,8 +2,13 @@
   height: 100%;
 }
 
+.post-list-list__container {
+  display: flex;
+  justify-content: center;
+}
+
 .posts-list-list {
-  width: 100%;
+  width: 90%;
   height: 100%;
   position: relative;
 
@@ -27,12 +32,11 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
   padding: 10px 0px;
 }
 
 .posts-list-list__post {
-  width: 45%;
+  width: 50%;
 }
 
 .posts-list-list__post-content {

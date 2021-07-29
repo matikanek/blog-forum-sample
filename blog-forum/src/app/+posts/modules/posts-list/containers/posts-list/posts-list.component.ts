@@ -57,13 +57,14 @@ export class PostsListComponent implements OnInit {
       body: "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit"
     }
   ];
-  dividedPosts = new Array(this.posts.length/4).fill(0).map((el, index) => {
-    return [...this.posts].splice(index*4, 4);
+  dividedPosts = new Array(Math.ceil(this.posts.length/6)).fill(0).map((element, index) => {
+    return [...this.posts].splice(index*6, 6);
   });
 
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.dividedPosts);
   }
 
 }
