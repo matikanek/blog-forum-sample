@@ -102,23 +102,23 @@
   display: flex;
   justify-content: space-between;
   cursor: pointer;
-}
 
-.posts-list-list__post-content-preview::before {
-  position: absolute;
-  bottom: 69px;
-  height: 100px;
-  width: 100%;
-  left: 0;
-  content: "";
-  background: linear-gradient(
-    to top,
-    rgba(255, 255, 255, 1) 40%,
-    rgba(255, 255, 255, 0) 90%
-  );
-  display: flex;
-  align-items: flex-end;
-  pointer-events: none; /* so the text is still selectable */
+  &::before {
+    position: absolute;
+    bottom: 76px;
+    height: 100px;
+    width: 100%;
+    left: 0;
+    content: "";
+    background: linear-gradient(
+      to top,
+      rgba(255, 255, 255, 1) 40%,
+      rgba(255, 255, 255, 0) 90%
+    );
+    display: flex;
+    align-items: flex-end;
+    pointer-events: none; /* so the text is still selectable */
+  }
 }
 
 .posts-list-list__post-content-link {
