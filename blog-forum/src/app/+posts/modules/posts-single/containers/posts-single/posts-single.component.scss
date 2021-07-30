@@ -100,7 +100,6 @@
 .posts-single__post-comments-separator {
   height: 25px;
   background-color: #c8ff46;
-  margin-top: 15px;
   position: relative;
 
   &::after {
@@ -117,7 +116,10 @@
 }
 
 .posts-single__post-comments {
-  padding: 20px;
+  padding: 40px 20px 60px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .posts-single__post-bottom {

@@ -12,14 +12,14 @@ export const comments: Comment[] = [
     id: 1,
     name: "id labore ex et quam laborum",
     email: "Eliseo@gardner.biz",
-    body: "laudantium enim quasi es…am sapiente accusantium"
+    body: "laudantium enim quasi es…am sapiente accusantium as asd kasdh dsakh dsa iuashi sadisdah dasd khkads iasd  kajdsh as kasd asdh sad jgasg uy gash"
   },
   {
     postId: 1,
     id: 2,
     name: "quo vero reiciendis velit similique earum",
     email: "Jayne_Kuhic@sydney.com",
-    body: "est natus enim nihil est…oluptatem reiciendis et"
+    body: "est natus enim nihil est…oluptatem reiciendis et a ksdj aiadsi adiuasdhadi hoads iuads asdh asdijhaijhadsiuhaf oh saiu as s oas osah"
   },
   {
     postId: 1,
