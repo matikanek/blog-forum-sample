@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Post } from 'src/app/shared/models/post.model';
+import { Router } from '@angular/router';
 import { 
   faCode, 
   faLocationArrow, 
@@ -10,7 +11,6 @@ import {
   faArrowLeft, 
   faArrowRight
 } from '@fortawesome/free-solid-svg-icons';
-import { NgbCarousel } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-posts-list-list',
@@ -29,7 +29,9 @@ export class PostsListListComponent implements OnInit {
   faArrowLeft = faArrowLeft;
   faArrowRight = faArrowRight;
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
 
@@ -47,4 +49,7 @@ export class PostsListListComponent implements OnInit {
     }
   }
 
+  onSelect(postId: number): void {
+    this.router.navigate([`/posts/${postId}`]);
+  }
 }

@@ -13,4 +13,8 @@ export class PostsRepository {
     return of(posts)
     //return this.http.get<Post[]>('Link do API');
   }
+
+  getPost(id: number): Observable<Post> {
+    return of(posts.find(song => song.id === id) as Post);
+  }
 }

@@ -1,7 +1,10 @@
 <div class="post-list-list__container">
   <div class="posts-list-list">
     <div class="posts-list-list__wrapper">
-      <div class="posts-list-list__post" *ngFor="let post of dividedPosts[currentIndex]">
+      <div 
+        class="posts-list-list__post" 
+        *ngFor="let post of dividedPosts[currentIndex]"
+      >
         <div class="posts-list-list__post-content">
           <div class="posts-list-list__post-content-topic">
             <fa-icon 
@@ -31,7 +34,7 @@
           <div class="posts-list-list__post-content-body">
             {{ post.body }}
           </div>
-          <div class="posts-list-list__post-content-preview">
+          <div class="posts-list-list__post-content-preview" (click)="onSelect(post.id)">
             <p class="posts-list-list__post-content-link">Zobacz</p>
             <fa-icon [icon]="faArrowUp"></fa-icon>
           </div>

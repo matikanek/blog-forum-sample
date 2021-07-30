@@ -15,4 +15,10 @@ export class PostsService {
       this.postsStore.set(posts);
     });
   }
+
+  getPost(id: number): void {
+    this.postsRepository.getPost(id).subscribe((post) => {
+      this.postsStore.update({post});
+    });
+  }
 }
