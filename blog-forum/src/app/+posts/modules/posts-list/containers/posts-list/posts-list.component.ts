@@ -49,12 +49,6 @@ export class PostsListComponent implements OnInit {
       id: 7,
       title: "eum et est occaecati",
       body: "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit"
-    },
-    {
-      userId: 1,
-      id: 8,
-      title: "eum et est occaecati",
-      body: "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit"
     }
   ];
   dividedPosts = new Array(Math.ceil(this.posts.length/6)).fill(0).map((element, index) => {
