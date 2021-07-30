@@ -1,10 +1,45 @@
 <div class="post-single__container">
   <div class="posts-single">
     <div class="posts-single__wrapper">
-      <div
+      <div class="posts-single__post"
         *ngIf="posts$ | async as post"
       >
-        {{ post.id }}
+        <div class="posts-single__post-top">
+          <i class="material-icons close-icon" (click)="goBack()">close</i>
+          <fa-icon class="posts-single__post-top-topic"
+            *ngIf="post.id % 5 === 1"
+            [icon]="faCode"
+          ></fa-icon>
+          <fa-icon class="posts-single__post-top-topic"
+            *ngIf="post.id % 5 === 2"
+            [icon]="faLocationArrow"
+          ></fa-icon>
+          <fa-icon class="posts-single__post-top-topic"
+            *ngIf="post.id % 5 === 3"
+            [icon]="faMapMarkerAlt"
+          ></fa-icon>
+          <fa-icon class="posts-single__post-top-topic"
+            *ngIf="post.id % 5 === 4"
+            [icon]="faHeart"
+          ></fa-icon>
+          <fa-icon class="posts-single__post-top-topic"
+            *ngIf="post.id % 5 === 0"
+            [icon]="faDollarSign"
+          ></fa-icon>
+        </div>
+        <div class="posts-single__post-content">
+          <div class="posts-single__post-content-title">
+            Sorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+          </div>
+          <div class="posts-single__post-content-body">
+            Qtandard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          </div>
+        </div>
+        <div class="posts-single__post-comments-separator"></div>
+        <div class="posts-single__post-comments"></div>
+        <div class="posts-single__post-bottom">
+          <fa-icon class="posts-single__post-bottom-add-comment" [icon]="faPlus"></fa-icon>
+        </div>
       </div>
     </div>
   </div>
