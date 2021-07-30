@@ -36,7 +36,17 @@
           </div>
         </div>
         <div class="posts-single__post-comments-separator"></div>
-        <div class="posts-single__post-comments"></div>
+        <div class="posts-single__post-comments">
+          <app-comments
+            *ngFor="let comment of comments"
+            [postId]="comment.postId"
+            [id]="comment.id"
+            [name]="comment.name"
+            [email]="comment.email"
+            [body]="comment.body"
+          >
+          </app-comments>
+        </div>
         <div class="posts-single__post-bottom">
           <fa-icon class="posts-single__post-bottom-add-comment" [icon]="faPlus"></fa-icon>
         </div>

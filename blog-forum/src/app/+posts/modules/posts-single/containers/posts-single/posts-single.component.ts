@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PostsQuery } from 'src/app/+posts/store/posts.query';
 import { PostsService } from 'src/app/+posts/store/posts.service';
+import { comments } from 'src/app/shared/models/comment.model';
 import { 
   faCode, 
   faLocationArrow, 
@@ -22,6 +23,7 @@ import {
 })
 export class PostsSingleComponent implements OnInit {
   posts$ = this.postsQuery.select(state => state.post);
+  comments = comments
   faCode = faCode;
   faLocationArrow = faLocationArrow;
   faMapMarkerAlt = faMapMarkerAlt;
