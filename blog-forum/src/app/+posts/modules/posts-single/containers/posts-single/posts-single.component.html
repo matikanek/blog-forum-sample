@@ -1,0 +1,11 @@
+<div class="post-single__container">
+  <div class="posts-single">
+    <div class="posts-single__wrapper">
+      <div
+        *ngIf="posts$ | async as post"
+      >
+        {{ post.id }}
+      </div>
+    </div>
+  </div>
+</div>
