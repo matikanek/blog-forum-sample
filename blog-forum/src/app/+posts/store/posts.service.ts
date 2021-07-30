@@ -1,7 +1,18 @@
 import { Injectable } from '@angular/core';
+import { PostsRepository } from './posts.repository';
+import { PostsStore } from './posts.store';
 
 @Injectable({ providedIn: 'root' })
 export class PostsService {
 
-  constructor() {}
+  constructor(
+    private postsRepository: PostsRepository,
+    private postsStore: PostsStore
+  ) {}
+
+  getPosts(): void {
+    this.postsRepository.getPosts().subscribe((posts) => {
+      this.postsStore.set(posts);
+    });
+  }
 }

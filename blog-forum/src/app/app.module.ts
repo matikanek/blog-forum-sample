@@ -7,7 +7,7 @@ import { LayoutModule } from './layout/layout.module';
 import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
 import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     LayoutModule,
     environment.production ? [] : AkitaNgDevtools.forRoot(),
     BrowserAnimationsModule,
-    NgbModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

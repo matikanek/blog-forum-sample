@@ -1,5 +1,5 @@
 <app-posts-list-list
-  *ngIf="posts"
+  *ngIf="posts$ | async as posts"
   [dividedPosts]="dividedPosts"
 >
 </app-posts-list-list>
