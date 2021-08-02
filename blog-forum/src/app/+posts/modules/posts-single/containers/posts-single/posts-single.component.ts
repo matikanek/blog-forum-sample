@@ -42,7 +42,6 @@ export class PostsSingleComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log(this.isPosting);
     const postId = +this.activatedRoute.snapshot.params.postId;
     this.postsService.getPost(postId);
     this.postsService.getComments(postId);

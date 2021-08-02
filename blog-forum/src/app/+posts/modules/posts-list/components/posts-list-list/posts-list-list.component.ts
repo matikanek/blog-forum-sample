@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { Post } from 'src/app/shared/models/post.model';
 import { Router } from '@angular/router';
 import { 
@@ -12,6 +12,8 @@ import {
   faArrowRight
 } from '@fortawesome/free-solid-svg-icons';
 
+const cache = require('memory-cache');
+
 @Component({
   selector: 'app-posts-list-list',
   templateUrl: './posts-list-list.component.html',
@@ -19,7 +21,7 @@ import {
 })
 export class PostsListListComponent implements OnInit {
   @Input() dividedPosts: Post[][] = [];
-  currentIndex = 0;
+  currentIndex: number = 0;
   faCode = faCode;
   faLocationArrow = faLocationArrow;
   faMapMarkerAlt = faMapMarkerAlt;
@@ -34,7 +36,10 @@ export class PostsListListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
+    if(cache.get('siteNumber')) {
+      this.currentIndex = cache.get('siteNumber');
+    }
+    cache.del('siteNumber');
   }
 
   prev(): void {
@@ -50,6 +55,7 @@ export class PostsListListComponent implements OnInit {
   }
 
   onSelect(postId: number): void {
+    cache.put('siteNumber', this.currentIndex);
     this.router.navigate([`/posts/${postId}`]);
   }
 }

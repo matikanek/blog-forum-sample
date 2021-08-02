@@ -9,10 +9,10 @@ import { faPlus, faComment } from '@fortawesome/free-solid-svg-icons';
 })
 export class PostSingleCommentsComponent implements OnInit {
   @Input() comments: Comment[] = [];
-  @Input() onPosting: boolean = false;
   @Input() inputName = "";
   @Input() inputEmail = "";
   @Input() inputValue = "";
+  @Input() onPosting: boolean = false;
   @Output() onPostingChange = new EventEmitter();
   faPlus = faPlus;
   faComment = faComment;
