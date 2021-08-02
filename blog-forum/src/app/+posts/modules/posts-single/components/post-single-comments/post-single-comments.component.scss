@@ -1,0 +1,54 @@
+.posts-single__comments-separator-comments {
+  height: 25px;
+  background-color: #c8ff46;
+  position: relative;
+
+  &::after {
+    content: "Comments";
+    color: #041c26;
+    position: absolute;
+    font-family: "Oswald", sans-serif;
+    font-size: 40px;
+    line-height: 59px;
+    font-weight: 600;
+    left: 45px;
+    bottom: 0;
+  }
+}
+
+.posts-single__comments-separator-add-comment {
+  &::after {
+    content: "Add Comment";
+  }
+}
+
+.posts-single__comments-comments {
+  padding: 45px 20px 45px 20px;
+}
+
+.posts-single__comments-footer {
+  position: relative;
+  height: 80px;
+  background-color: #c8ff46;
+  border-radius: 0px 0px 8px 8px;
+}
+
+.posts-single__comments-add-comment {
+  position: absolute;
+  width: 96px;
+  min-height: 96px;
+  border-radius: 50%;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background: #041c26;
+  right: 35px;
+  top: -48px;
+  cursor: pointer;
+}
+
+.post-single__comments-add-comment-correction {
+  cursor: context-menu;
+}

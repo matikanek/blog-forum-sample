@@ -1,0 +1,22 @@
+<div *ngIf="!onPosting">
+  <div class="posts-single__comments-separator-comments"></div>
+  <div class="posts-single__comments-comments">
+    <app-comment
+      *ngFor="let comment of comments"
+      [comment]="comment"
+    >
+    </app-comment>
+  </div>
+  <div class="posts-single__comments-footer" (click)="onNewComment()">
+    <fa-icon class="posts-single__comments-add-comment" [icon]="faPlus"></fa-icon>
+  </div>
+</div>
+<div *ngIf="onPosting">
+  <div class="posts-single__comments-separator-comments posts-single__comments-separator-add-comment"></div>
+  <div class="posts-single__comments-footer">
+  </div>
+  <fa-icon 
+    class="posts-single__comments-add-comment post-single__comments-add-comment-correction" 
+    [icon]="faComment"
+  ></fa-icon>
+</div>

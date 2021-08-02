@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PostsQuery } from 'src/app/+posts/store/posts.query';
 import { PostsService } from 'src/app/+posts/store/posts.service';
-import { comments } from 'src/app/shared/models/comment.model';
 import { 
   faCode, 
   faLocationArrow, 
@@ -23,7 +22,7 @@ import {
 })
 export class PostsSingleComponent implements OnInit {
   posts$ = this.postsQuery.select(state => state.post);
-  comments = comments
+  comments$ = this.postsQuery.select(state => state.comments);
   faCode = faCode;
   faLocationArrow = faLocationArrow;
   faMapMarkerAlt = faMapMarkerAlt;
@@ -33,6 +32,7 @@ export class PostsSingleComponent implements OnInit {
   faArrowLeft = faArrowLeft;
   faArrowRight = faArrowRight;
   faPlus = faPlus;
+  isPosting = false;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -42,7 +42,10 @@ export class PostsSingleComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.postsService.getPost(+this.activatedRoute.snapshot.params.postId);
+    console.log(this.isPosting);
+    const postId = +this.activatedRoute.snapshot.params.postId;
+    this.postsService.getPost(postId);
+    this.postsService.getComments(postId);
   }
 
   goBack(): void {

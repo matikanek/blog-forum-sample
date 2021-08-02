@@ -29,26 +29,25 @@
         </div>
         <div class="posts-single__post-content">
           <div class="posts-single__post-content-title">
-            Sorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+            {{ post.title }}
           </div>
           <div class="posts-single__post-content-body">
-            Qtandard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries. 
+            {{ post.body }}
           </div>
         </div>
-        <div class="posts-single__post-comments-separator"></div>
-        <div class="posts-single__post-comments">
-          <app-comment
-            *ngFor="let comment of comments"
-            [postId]="comment.postId"
-            [id]="comment.id"
-            [name]="comment.name"
-            [email]="comment.email"
-            [body]="comment.body"
+        <div class="posts-single__post-comments" *ngIf="comments$ | async as comments">
+          <app-post-single-comments
+            *ngIf="!isPosting"
+            [comments]="comments"
+            [(onPosting)]="isPosting"
           >
-          </app-comment>
-        </div>
-        <div class="posts-single__post-bottom">
-          <fa-icon class="posts-single__post-bottom-add-comment" [icon]="faPlus"></fa-icon>
+          </app-post-single-comments>
+          <app-post-single-comments
+            *ngIf="isPosting"
+            [comments]="comments"
+            [(onPosting)]="isPosting"
+          >
+          </app-post-single-comments>
         </div>
       </div>
     </div>

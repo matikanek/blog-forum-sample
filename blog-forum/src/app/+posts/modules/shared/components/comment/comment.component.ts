@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Comment } from 'src/app/shared/models/comment.model';
 
 @Component({
   selector: 'app-comment',
@@ -6,11 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./comment.component.scss']
 })
 export class CommentComponent implements OnInit {
-  @Input() postId = 0;
-  @Input() id = 0;
-  @Input() name = '';
-  @Input() email = '';
-  @Input() body = '';
+  @Input() comment: Comment | undefined;
 
   constructor() { }
 

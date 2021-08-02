@@ -4,10 +4,12 @@ import { PostsSingleComponent } from './containers/posts-single/posts-single.com
 import { MatIconModule } from '@angular/material/icon';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SharedModule } from '../shared/shared.module';
+import { PostSingleCommentsComponent } from './components/post-single-comments/post-single-comments.component';
 
 @NgModule({
   declarations: [
-    PostsSingleComponent
+    PostsSingleComponent,
+    PostSingleCommentsComponent
   ],
   imports: [
     CommonModule,
