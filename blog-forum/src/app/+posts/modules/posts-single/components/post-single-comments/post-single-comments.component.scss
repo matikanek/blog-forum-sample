@@ -28,9 +28,14 @@
 
 .posts-single__comments-footer {
   position: relative;
+  padding: 0px 45px;
   height: 80px;
   background-color: #c8ff46;
   border-radius: 0px 0px 8px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Inter", sans-serif;
 }
 
 .posts-single__comments-add-comment {
@@ -51,4 +56,45 @@
 
 .post-single__comments-add-comment-correction {
   cursor: context-menu;
+}
+
+.post-single__comments-form {
+  padding: 30px 45px 0px 45px;
+  background-color: #c8ff46;
+  display: flex;
+  flex-direction: column;
+}
+
+.posts-single__comments-dismiss {
+  text-decoration: underline;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  cursor: pointer;
+}
+
+.posts-single__comments-send {
+  width: 320px;
+  height: 100%;
+  background-color: #041c26;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29px;
+  cursor: pointer;
+}
+
+.post-single__comment-form-data-item {
+  width: 50%;
+  padding: 10px 18px;
+  margin-bottom: 20px;
+}
+
+.post-single__comment-form-textarea {
+  width: 100%;
+  height: 265px;
+  padding: 20px 18px;
 }

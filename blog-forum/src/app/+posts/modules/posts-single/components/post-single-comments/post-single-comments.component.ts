@@ -10,6 +10,9 @@ import { faPlus, faComment } from '@fortawesome/free-solid-svg-icons';
 export class PostSingleCommentsComponent implements OnInit {
   @Input() comments: Comment[] = [];
   @Input() onPosting: boolean = false;
+  @Input() inputName = "";
+  @Input() inputEmail = "";
+  @Input() inputValue = "";
   @Output() onPostingChange = new EventEmitter();
   faPlus = faPlus;
   faComment = faComment;
@@ -19,7 +22,7 @@ export class PostSingleCommentsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onNewComment(): void {
+  onAddDismissComment(): void {
     this.onPosting = !this.onPosting;
     this.onPostingChange.emit(this.onPosting);
   }

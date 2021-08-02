@@ -7,13 +7,40 @@
     >
     </app-comment>
   </div>
-  <div class="posts-single__comments-footer" (click)="onNewComment()">
+  <div class="posts-single__comments-footer" (click)="onAddDismissComment()">
     <fa-icon class="posts-single__comments-add-comment" [icon]="faPlus"></fa-icon>
   </div>
 </div>
 <div *ngIf="onPosting">
   <div class="posts-single__comments-separator-comments posts-single__comments-separator-add-comment"></div>
+  <div class="post-single__comments-form">
+    <input 
+      class="post-single__comment-form-data-item"
+      nz-input 
+      placeholder="User name" 
+      nzSize="large" 
+      [(ngModel)]="inputName" />
+    <input
+      class="post-single__comment-form-data-item" 
+      nz-input 
+      placeholder="email"
+      nzSize="large" 
+      [(ngModel)]="inputEmail" 
+    />
+    <textarea 
+      class="post-single__comment-form-textarea"
+      nz-input 
+      [(ngModel)]="inputValue"
+      placeholder="Write your comment here..."
+    ></textarea>
+  </div>
   <div class="posts-single__comments-footer">
+    <div class="posts-single__comments-dismiss" (click)="onAddDismissComment()">
+      Odrzuć
+    </div>
+    <div class="posts-single__comments-send">
+      Wyślij&nbsp;<fa-icon [icon]="faPlus"></fa-icon>
+    </div>
   </div>
   <fa-icon 
     class="posts-single__comments-add-comment post-single__comments-add-comment-correction" 
