@@ -6,7 +6,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SharedModule } from '../shared/shared.module';
 import { PostSingleCommentsComponent } from './components/post-single-comments/post-single-comments.component';
 import { NzInputModule } from 'ng-zorro-antd/input';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PostSingleFactory } from './post-single-form.factory';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,11 @@ import { FormsModule } from '@angular/forms';
     FontAwesomeModule,
     SharedModule,
     NzInputModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
+  ],
+  providers: [
+    PostSingleFactory
   ]
 })
 export class PostsSingleModule { }

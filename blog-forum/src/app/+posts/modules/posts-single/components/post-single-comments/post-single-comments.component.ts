@@ -1,29 +1,22 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Comment } from 'src/app/shared/models/comment.model';
 import { faPlus, faComment } from '@fortawesome/free-solid-svg-icons';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-post-single-comments',
   templateUrl: './post-single-comments.component.html',
   styleUrls: ['./post-single-comments.component.scss']
 })
-export class PostSingleCommentsComponent implements OnInit {
+export class PostSingleCommentsComponent {
   @Input() comments: Comment[] = [];
-  @Input() inputName = "";
-  @Input() inputEmail = "";
-  @Input() inputValue = "";
-  @Input() onPosting: boolean = false;
-  @Output() onPostingChange = new EventEmitter();
+  @Input() newCommentForm: FormGroup = {} as FormGroup;
+  @Output() submit = new EventEmitter()
   faPlus = faPlus;
   faComment = faComment;
+  isPosting = false;
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-  onAddDismissComment(): void {
-    this.onPosting = !this.onPosting;
-    this.onPostingChange.emit(this.onPosting);
+  onSubmit(): void {
+    this.submit.emit();
   }
 }

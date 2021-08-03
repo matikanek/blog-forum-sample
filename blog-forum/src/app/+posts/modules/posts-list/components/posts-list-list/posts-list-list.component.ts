@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { Post } from 'src/app/shared/models/post.model';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { RouterService } from 'src/app/shared/services/router.service';
 import { 
   faCode, 
   faLocationArrow, 
@@ -11,8 +12,6 @@ import {
   faArrowLeft, 
   faArrowRight
 } from '@fortawesome/free-solid-svg-icons';
-
-const cache = require('memory-cache');
 
 @Component({
   selector: 'app-posts-list-list',
@@ -32,30 +31,35 @@ export class PostsListListComponent implements OnInit {
   faArrowRight = faArrowRight;
 
   constructor(
-    private router: Router
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private routerService: RouterService
   ) { }
 
   ngOnInit(): void {
-    if(cache.get('siteNumber')) {
-      this.currentIndex = cache.get('siteNumber');
+    const { page } = this.activatedRoute.snapshot.queryParams;
+    if(page) {
+      this.currentIndex = +page - 1; //ponieważ page jest string 
+    } else { 
+      this.routerService.navigateNoReload({ page: 1 });
     }
-    cache.del('siteNumber');
   }
 
   prev(): void {
     if(this.currentIndex > 0) {
       this.currentIndex -= 1;
     }
+    this.routerService.navigateNoReload({ page: this.currentIndex + 1 });
   }
 
   next(): void {
     if(this.currentIndex < this.dividedPosts.length-1) {
       this.currentIndex += 1;
     }
+    this.routerService.navigateNoReload({ page: this.currentIndex + 1 });
   }
 
   onSelect(postId: number): void {
-    cache.put('siteNumber', this.currentIndex);
     this.router.navigate([`/posts/${postId}`]);
   }
 }

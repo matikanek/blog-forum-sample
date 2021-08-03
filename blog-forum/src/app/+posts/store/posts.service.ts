@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
+import { Comment } from 'src/app/shared/models/comment.model';
 import { PostsRepository } from './posts.repository';
 import { PostsStore } from './posts.store';
 
@@ -40,5 +41,14 @@ export class PostsService {
         catchError((error) => of(error))
       )
       .subscribe()
-  }  
+  }
+
+  postComment(payload: Comment, postId: number): void {
+    this.postsRepository
+      .postComment(payload, postId)
+      .pipe(
+        catchError((error) => of(error))
+      )
+      .subscribe()
+  }
 }

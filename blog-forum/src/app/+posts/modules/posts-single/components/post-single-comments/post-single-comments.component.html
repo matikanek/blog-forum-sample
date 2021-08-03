@@ -1,4 +1,4 @@
-<div *ngIf="!onPosting">
+<div *ngIf="!isPosting">
   <div class="posts-single__comments-separator-comments"></div>
   <div class="posts-single__comments-comments">
     <app-comment
@@ -7,40 +7,45 @@
     >
     </app-comment>
   </div>
-  <div class="posts-single__comments-footer" (click)="onAddDismissComment()">
+  <div class="posts-single__comments-footer" (click)="isPosting = true">
     <fa-icon class="posts-single__comments-add-comment" [icon]="faPlus"></fa-icon>
   </div>
 </div>
-<div *ngIf="onPosting">
+<div *ngIf="isPosting">
   <div class="posts-single__comments-separator-comments posts-single__comments-separator-add-comment"></div>
-  <div class="post-single__comments-form">
+  <form class="post-single__comments-form" [formGroup]="newCommentForm">
     <input 
       class="post-single__comment-form-data-item"
       nz-input 
       placeholder="User name" 
-      nzSize="large" 
-      [(ngModel)]="inputName" />
+      nzSize="large"
+      formControlName="name"  
+    />
     <input
       class="post-single__comment-form-data-item" 
       nz-input 
       placeholder="email"
       nzSize="large" 
-      [(ngModel)]="inputEmail" 
+      formControlName="email"
     />
     <textarea 
       class="post-single__comment-form-textarea"
       nz-input 
-      [(ngModel)]="inputValue"
       placeholder="Write your comment here..."
+      formControlName="text"
     ></textarea>
-  </div>
+  </form>
   <div class="posts-single__comments-footer">
-    <div class="posts-single__comments-dismiss" (click)="onAddDismissComment()">
+    <div class="posts-single__comments-dismiss" (click)="isPosting = false">
       Odrzuć
     </div>
-    <div class="posts-single__comments-send">
+    <button 
+      class="posts-single__comments-send" 
+      (click)="onSubmit()" 
+      [disabled]="newCommentForm.invalid"
+    >
       Wyślij&nbsp;<fa-icon [icon]="faPlus"></fa-icon>
-    </div>
+    </button>
   </div>
   <fa-icon 
     class="posts-single__comments-add-comment post-single__comments-add-comment-correction" 

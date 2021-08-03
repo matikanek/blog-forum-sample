@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Post } from 'src/app/shared/models/post.model';
 import { environment } from 'src/environments/environment';
 import { Comment } from 'src/app/shared/models/comment.model';
@@ -20,5 +20,11 @@ export class PostsRepository {
 
   getComments(postId: number): Observable<Comment[]> {
     return this.http.get<Comment[]>(`${environment.apiUrl}/comments?postId=${postId}`);
+  }
+
+  postComment(payload: Comment, postId: number): Observable<string> {
+    // Tutaj byłoby dodawanie komentarza ale nie ma tego w API
+    // this.http.post<Comment>(`${environment.apiUrl}/comments`, {...payload, postId});
+    return of('response');
   }
 }
