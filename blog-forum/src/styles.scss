@@ -26,6 +26,6 @@ p {
 
 button:disabled,
 button[disabled] {
-  cursor: unset;
-  opacity: 0.6;
+  cursor: unset !important;
+  opacity: 0.8;
 }

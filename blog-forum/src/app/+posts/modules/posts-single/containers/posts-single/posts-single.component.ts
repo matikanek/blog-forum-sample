@@ -50,7 +50,7 @@ export class PostsSingleComponent implements OnInit, OnDestroy {
     const postId = +this.activatedRoute.snapshot.params.postId;
     this.postsService.getPost(postId);
     this.postsService.getComments(postId);
-    this.newCommentForm.valueChanges.subscribe(console.log);
+    this.newCommentForm.valueChanges.subscribe();
   }
 
   goBack(): void {
@@ -59,6 +59,7 @@ export class PostsSingleComponent implements OnInit, OnDestroy {
   }
 
   onSubmit(): void {
+    console.log(this.newCommentForm.value);
     this.postsService.postComment(this.newCommentForm.value, this.postsQuery.getValue().post?.id as number);
   }
 
