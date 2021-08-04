@@ -1,15 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 /* Importing Bootstrap SCSS file. */
-@import "~bootstrap/scss/bootstrap";
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "settings/colors";
+@import "settings/typography";
+@import "settings/shadows";
+@import "settings/mediaQueries";
 
 body {
   margin: 0;
-  color: #fff;
-  background-color: #5522e8;
+  color: $color-white;
+  background-color: $color-background;
   background-size: 40px 40px;
-  background-image: linear-gradient(to right, #692be9 1px, transparent 1px),
-    linear-gradient(to bottom, #692be9 1px, transparent 1px);
+  background-image: linear-gradient(
+      to right,
+      $color-tertiary 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, $color-tertiary 1px, transparent 1px);
 }
 
 * {

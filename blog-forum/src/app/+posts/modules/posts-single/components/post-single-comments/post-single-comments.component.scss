@@ -1,20 +1,22 @@
+@import "./styles.scss";
+
 .posts-single__comments-separator-comments {
   height: 25px;
-  background-color: #c8ff46;
+  background-color: $color-primary;
   position: relative;
 
   &::after {
     content: "Comments";
-    color: #041c26;
+    color: $color-light-black;
     position: absolute;
-    font-family: "Oswald", sans-serif;
+    font-family: $font-family-primary;
     font-size: 40px;
     line-height: 59px;
     font-weight: 600;
     left: 45px;
     bottom: 0;
 
-    @media only screen and (max-width: 500px) {
+    @media only screen and (max-width: $smartphone-width) {
       font-size: 35px;
     }
   }
@@ -25,7 +27,7 @@
     content: "Add Comment";
   }
 
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: $smartphone-width) {
     font-size: 35px;
   }
 }
@@ -33,7 +35,7 @@
 .posts-single__comments-comments {
   padding: 45px 20px 45px 20px;
 
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: $smartphone-width) {
     padding-bottom: 20px;
   }
 }
@@ -42,14 +44,14 @@
   position: relative;
   padding: 0px 45px;
   height: 80px;
-  background-color: #c8ff46;
+  background-color: $color-primary;
   border-radius: 0px 0px 8px 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: "Inter", sans-serif;
+  font-family: $font-family-secondary;
 
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: $smartphone-width) {
     flex-direction: column;
     height: 105px;
   }
@@ -64,13 +66,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
-  background: #041c26;
+  color: $color-white;
+  background: $color-light-black;
   right: 35px;
   top: -48px;
   cursor: pointer;
 
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: $smartphone-width) {
     width: 75px;
     min-height: 75px;
     font-size: 35px;
@@ -84,11 +86,12 @@
 
 .post-single__comments-form {
   padding: 30px 45px 0px 45px;
-  background-color: #c8ff46;
+  background-color: $color-primary;
   display: flex;
   flex-direction: column;
+  font-family: $font-family-secondary;
 
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: $smartphone-width) {
     padding: 30px 45px 25px 45px;
   }
 }
@@ -104,8 +107,8 @@
 .posts-single__comments-send {
   width: 320px;
   height: 100%;
-  background-color: #041c26;
-  color: #fff;
+  background-color: $color-light-black;
+  color: $color-white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -116,7 +119,7 @@
   border: none;
   padding: 0px;
 
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: $smartphone-width) {
     width: 100%;
     margin-top: 25px;
   }
@@ -127,7 +130,7 @@
   padding: 10px 18px;
   margin-bottom: 20px;
 
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: $smartphone-width) {
     width: 100%;
     padding: 20px 18px;
   }

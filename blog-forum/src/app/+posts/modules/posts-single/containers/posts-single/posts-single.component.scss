@@ -1,3 +1,5 @@
+@import "./styles.scss";
+
 :host {
   height: 100%;
 }
@@ -14,9 +16,9 @@
 
   &::before {
     content: "";
-    background-color: rgba(113, 34, 232, 0.856);
-    border-left: 1px solid rgba(250, 250, 250, 0.25);
-    border-right: 1px solid rgba(250, 250, 250, 0.25);
+    background-color: $color-tertiary;
+    border-left: 1px solid $color-grey;
+    border-right: 1px solid $color-grey;
     width: 80%;
     position: absolute;
     left: 50%;
@@ -38,10 +40,10 @@
 
 .posts-single__post {
   width: 100%;
-  background-color: #fff;
-  box-shadow: 0px 16px 24px rgba(24, 11, 55, 0.25);
+  background-color: $color-white;
+  box-shadow: 0px 16px 24px $color-black;
   border-radius: 8px;
-  color: #041c26;
+  color: $color-light-black;
   display: flex;
   flex-direction: column;
 }
@@ -49,12 +51,12 @@
 .posts-single__post-top {
   width: 100%;
   height: 96px;
-  background-color: #041c26;
+  background-color: $color-light-black;
   border-radius: 8px 8px 0px 0px;
-  color: #fff;
+  color: $color-white;
   position: relative;
 
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: $smartphone-width) {
     height: 80px;
   }
 }
@@ -69,10 +71,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #041c26;
-  background: linear-gradient(91.62deg, #c8ff46 31.18%, #97ff46 100%);
+  color: $color-light-black;
+  background: linear-gradient(
+    91.62deg,
+    $color-primary 31.18%,
+    $color-secondary 100%
+  );
 
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: $smartphone-width) {
     width: 80px;
     min-height: 80px;
     font-size: 35px;
@@ -90,7 +96,7 @@
 .posts-single__post-content {
   padding: 65px 45px 45px 45px;
 
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: $smartphone-width) {
     padding: 55px 45px 35px 45px;
   }
 }
@@ -99,9 +105,9 @@
   font-size: 40px;
   line-height: 48px;
   font-weight: 300;
-  font-family: "Oswald", sans-serif;
+  font-family: $font-family-primary;
 
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: $smartphone-width) {
     font-size: 30px;
     line-height: 42px;
   }
@@ -111,10 +117,10 @@
   font-size: 20px;
   line-height: 32px;
   font-weight: 400;
-  font-family: "Inter", sans-serif;
+  font-family: $font-family-secondary;
   padding: 30px 0px;
 
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: $smartphone-width) {
     font-size: 18px;
     line-height: 28px;
     padding: 20px 0px;
