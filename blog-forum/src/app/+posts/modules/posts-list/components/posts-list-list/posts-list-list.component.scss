@@ -7,6 +7,10 @@
 .post-list-list__container {
   display: flex;
   justify-content: center;
+
+  @media only screen and (max-width: $smartphone-width) {
+    padding-bottom: 150px;
+  }
 }
 
 .posts-list-list {
