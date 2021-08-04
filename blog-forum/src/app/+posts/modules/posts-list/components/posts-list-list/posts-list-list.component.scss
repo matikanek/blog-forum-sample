@@ -187,7 +187,8 @@
 
   @media only screen and (max-width: $smartphone-width) {
     top: unset;
-    bottom: 11.5vh;
+    bottom: 90px;
+    z-index: 2;
   }
 }
 
