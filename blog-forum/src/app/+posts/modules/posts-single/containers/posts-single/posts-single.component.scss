@@ -53,6 +53,10 @@
   border-radius: 8px 8px 0px 0px;
   color: #fff;
   position: relative;
+
+  @media only screen and (max-width: 500px) {
+    height: 80px;
+  }
 }
 
 .posts-single__post-top-topic {
@@ -67,6 +71,12 @@
   align-items: center;
   color: #041c26;
   background: linear-gradient(91.62deg, #c8ff46 31.18%, #97ff46 100%);
+
+  @media only screen and (max-width: 500px) {
+    width: 80px;
+    min-height: 80px;
+    font-size: 35px;
+  }
 }
 
 .close-icon {
@@ -79,6 +89,10 @@
 
 .posts-single__post-content {
   padding: 65px 45px 45px 45px;
+
+  @media only screen and (max-width: 500px) {
+    padding: 55px 45px 35px 45px;
+  }
 }
 
 .posts-single__post-content-title {
@@ -86,6 +100,11 @@
   line-height: 48px;
   font-weight: 300;
   font-family: "Oswald", sans-serif;
+
+  @media only screen and (max-width: 500px) {
+    font-size: 30px;
+    line-height: 42px;
+  }
 }
 
 .posts-single__post-content-body {
@@ -94,6 +113,12 @@
   font-weight: 400;
   font-family: "Inter", sans-serif;
   padding: 30px 0px;
+
+  @media only screen and (max-width: 500px) {
+    font-size: 18px;
+    line-height: 28px;
+    padding: 20px 0px;
+  }
 }
 
 .posts-single__post-comments {

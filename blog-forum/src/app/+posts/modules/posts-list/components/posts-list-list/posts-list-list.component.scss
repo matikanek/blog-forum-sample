@@ -38,6 +38,10 @@
 
 .posts-list-list__post {
   width: 50%;
+
+  @media only screen and (max-width: 500px) {
+    width: 100%;
+  }
 }
 
 .posts-list-list__post-content {
@@ -55,6 +59,16 @@
   &:hover {
     min-height: 600px;
   }
+
+  @media only screen and (max-width: 500px) {
+    min-height: 450px;
+    max-height: 450px;
+    margin: 20px 15px;
+
+    &:hover {
+      min-height: 450px;
+    }
+  }
 }
 
 .posts-list-list__post-content-topic {
@@ -67,6 +81,12 @@
   justify-content: center;
   align-items: center;
   background: linear-gradient(91.62deg, #c8ff46 31.18%, #97ff46 100%);
+
+  @media only screen and (max-width: 500px) {
+    width: 75px;
+    min-height: 75px;
+    font-size: 30px;
+  }
 }
 
 .posts-list-list__post-content-title {
@@ -85,6 +105,12 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  @media only screen and (max-width: 500px) {
+    font-size: 25px;
+    line-height: 30px;
+    padding: 5px 35px 25px 35px;
+  }
 }
 
 .posts-list-list__post-content-body {
@@ -94,6 +120,12 @@
   padding: 0px 15px 0px 35px;
   flex-grow: 1;
   overflow: hidden;
+
+  @media only screen and (max-width: 500px) {
+    font-size: 15px;
+    line-height: 22px;
+    padding: 0px 35px 0px 35px;
+  }
 }
 
 .posts-list-list__post-content-preview {
@@ -124,6 +156,10 @@
     align-items: flex-end;
     pointer-events: none; /* so the text is still selectable */
   }
+
+  @media only screen and (max-width: 500px) {
+    font-size: 20px;
+  }
 }
 
 .posts-list-list__post-content-link {
@@ -138,11 +174,20 @@
   font-family: "Oswald", sans-serif;
   display: flex;
   align-items: baseline;
+
+  @media only screen and (max-width: 500px) {
+    top: unset;
+    bottom: 11.5vh;
+  }
 }
 
 .post-list-list__page-counter-arrow {
   font-size: 32px;
   cursor: pointer;
+
+  @media only screen and (max-width: 500px) {
+    font-size: 25px;
+  }
 }
 
 .post-list-list__page-counter-side-number {
@@ -155,11 +200,19 @@
   font-size: 64px;
   color: #c8ff46;
   font-weight: 600;
+
+  @media only screen and (max-width: 500px) {
+    font-size: 28px;
+  }
 }
 
 .post-list-list__page-counter-side-number-all {
   font-size: 32px;
   font-weight: 300;
+
+  @media only screen and (max-width: 500px) {
+    font-size: 16px;
+  }
 }
 
 .post-list-list__page-counter-arrow--disabled {

@@ -13,6 +13,10 @@
     font-weight: 600;
     left: 45px;
     bottom: 0;
+
+    @media only screen and (max-width: 500px) {
+      font-size: 35px;
+    }
   }
 }
 
@@ -20,10 +24,18 @@
   &::after {
     content: "Add Comment";
   }
+
+  @media only screen and (max-width: 500px) {
+    font-size: 35px;
+  }
 }
 
 .posts-single__comments-comments {
   padding: 45px 20px 45px 20px;
+
+  @media only screen and (max-width: 500px) {
+    padding-bottom: 20px;
+  }
 }
 
 .posts-single__comments-footer {
@@ -36,6 +48,11 @@
   justify-content: space-between;
   align-items: center;
   font-family: "Inter", sans-serif;
+
+  @media only screen and (max-width: 500px) {
+    flex-direction: column;
+    height: 105px;
+  }
 }
 
 .posts-single__comments-add-comment {
@@ -52,6 +69,13 @@
   right: 35px;
   top: -48px;
   cursor: pointer;
+
+  @media only screen and (max-width: 500px) {
+    width: 75px;
+    min-height: 75px;
+    font-size: 35px;
+    top: -38px;
+  }
 }
 
 .post-single__comments-add-comment-correction {
@@ -63,6 +87,10 @@
   background-color: #c8ff46;
   display: flex;
   flex-direction: column;
+
+  @media only screen and (max-width: 500px) {
+    padding: 30px 45px 25px 45px;
+  }
 }
 
 .posts-single__comments-dismiss {
@@ -86,12 +114,23 @@
   line-height: 29px;
   cursor: pointer;
   border: none;
+  padding: 0px;
+
+  @media only screen and (max-width: 500px) {
+    width: 100%;
+    margin-top: 25px;
+  }
 }
 
 .post-single__comment-form-data-item {
   width: 50%;
   padding: 10px 18px;
   margin-bottom: 20px;
+
+  @media only screen and (max-width: 500px) {
+    width: 100%;
+    padding: 20px 18px;
+  }
 }
 
 .post-single__comment-form-textarea {

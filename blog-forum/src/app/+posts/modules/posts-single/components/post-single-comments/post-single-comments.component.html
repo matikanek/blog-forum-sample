@@ -7,8 +7,8 @@
     >
     </app-comment>
   </div>
-  <div class="posts-single__comments-footer" (click)="isPosting = true">
-    <fa-icon class="posts-single__comments-add-comment" [icon]="faPlus"></fa-icon>
+  <div class="posts-single__comments-footer">
+    <fa-icon class="posts-single__comments-add-comment" [icon]="faPlus" (click)="isPosting = true"></fa-icon>
   </div>
 </div>
 <div *ngIf="isPosting">
